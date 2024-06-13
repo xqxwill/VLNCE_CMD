@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Vision-and-Language Navigation in Continuous Environments (VLN-CE)
 
 [Project Website](https://jacobkrantz.github.io/vlnce/) — [VLN-CE Challenge](https://eval.ai/web/challenges/challenge-page/719) — [RxR-Habitat Challenge](https://ai.google.com/research/rxr/habitat)
@@ -290,3 +291,6 @@ If you use the RxR-Habitat data, please additionally cite the following [paper](
   year={2020}
 }
 ```
+=======
+# VLNCE_CMD
+>>>>>>> b03d45187668a56c4656a1d82b3fabf6a477b263
