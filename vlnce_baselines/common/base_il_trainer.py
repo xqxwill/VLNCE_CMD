@@ -29,6 +29,8 @@ from vlnce_baselines.common.aux_losses import AuxLosses
 from vlnce_baselines.common.env_utils import construct_envs_auto_reset_false
 from vlnce_baselines.common.utils import extract_instruction_tokens
 
+import numpy as np
+
 with warnings.catch_warnings():
     warnings.filterwarnings("ignore", category=FutureWarning)
     import tensorflow as tf  # noqa: F401
@@ -278,6 +280,14 @@ class BaseVLNCETrainer(BaseILTrainer):
         self.policy.eval()
 
         observations = envs.reset()
+        # torch.set_printoptions(threshold=float('inf'))
+        np_observations = np.array(observations)
+        np.savetxt("/home/x/VLNCE/VLN-CE/data/checkpoints/cma_test/newlog/ob0.txt", np_observations)
+        # with open(
+        #     '/home/x/VLNCE/VLN-CE/data/checkpoints/cma_test/newlog/ob0.txt',
+        #     'w') as f:
+        #     f.write(str(np_observations))
+        print("save ob0===========================================")
         observations = extract_instruction_tokens(
             observations, self.config.TASK_CONFIG.TASK.INSTRUCTION_SENSOR_UUID
         )
